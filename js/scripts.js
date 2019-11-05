@@ -54,14 +54,23 @@ Contact.prototype.fullName = function () {
 //user interface logic
 var addressBook = new AddressBook ();//this is unusual--it's a global variable. Normally, we'd avoid. But this exercise needs to mimic a database.
 
-$(document).ready(function (){
-  $("form#new-contact").submit(function(event){
+function displayContactDetails(addressBookToDisplay) {
+  var contactsList = $("ul#contacts");
+  var htmlForContactInfo = "";
+  addressBookToDisplay.contacts.forEach(function(contact) {
+    htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
+  });
+  contactsList.html(htmlForContactInfo);
+};//best practice to exclude this from the code that has our event listener.
+
+$(document).ready(function() {
+  $("form#new-contact").submit(function(event) {
     event.preventDefault();
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
-    var inputtedPhoneNumber = $("input#new-phone-inputtedPhoneNumber").val();
-    var newContact = new Contact (inputtedFirstName, inputted LastName, inputtedPhoneNUmber);
-      addressBook.addContact(newContact);
-      console.log(addressBook.contacts);
+    var inputtedPhoneNumber = $("input#new-phone-number").val();
+    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+    addressBook.addContact(newContact);
+    displayContactDetails(addressBook);
   })
 })
