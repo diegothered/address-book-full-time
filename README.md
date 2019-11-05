@@ -1,15 +1,16 @@
-# INSERT PROJECT TITLE
+# Address Book
 
-## Created by PARTNER NAME and Lara Bjork on DATE
+## Created by Diego Rojas and Lara Bjork on November 5, 2019
 
 ### Project Description
-This project was completed as part of the Epidocus in-class curriculum. The task description was as follows:
+This project was completed as part of the Epicodus in-class curriculum. The task description was as follows:
 
-As stated in the prompt from Epicodus, the project objectives are to:
+Follow along with the Address Book lessons to add the new concepts discussed in last night's homework. Complete these items for it too:
 
-INSERT TEXT FROM CURRICULUM HERE.
-
-ADD SPECS (behavior/input/output)
+* Add functionality to record and display a contact's email address.
+* Add functionality to record and display a contact's physical address.
+* Then, add functionality that allows a user to record multiple addresses (email or physical) for a single Contact, and what type each address is (ie: "work", "personal", etc.) (Hint: Address will need to be an object with multiple properties saved within the Contact object.)
+* Remove any additional address fields when the form is submitted. (One way to do this would be to use the not() and remove() functions.)
 
 
 ### Technologies Used
@@ -17,18 +18,13 @@ HTML, CSS, Bootstrap 3.3.7, JavaScript, and jQuery v3.4.1 (uncompressed developm
 Project was written using Google Chrome; no other browsers were tested for compatibility.
 
 ### Project Setup instructions
-There shouldn't be any special setup required. If something doesn't display correctly or goes wrong somehow, please contact us at <INSERT PARTNER EMAIL> and <lara.m.bjork@gmail.com> and we will do our best to troubleshoot for you.
+There shouldn't be any special setup required. If something doesn't display correctly or goes wrong somehow, please contact us at <diego.gustavo.rojas@gmail.com> and <lara.m.bjork@gmail.com> and we will do our best to troubleshoot for you.
 
 ### Known Issues
-* KEEP THIS IF IT APPLIES: Although there is responsive sizing in place, this project is best viewed on standard desktop. It was not tested on a large desktop, table, or phone.
-
-
-
-### Where to Find This Project
-USE THIS SECTION ONLY IF GH PAGE CREATED
+* No known issues.
 
 
 ### License
 This software is licensed under the MIT license.
 
-_Copyright (c) 2019 ** PARTNER NAME and Lara Bjork **_
+_Copyright (c) 2019 ** Diego Rojas and Lara Bjork **_
