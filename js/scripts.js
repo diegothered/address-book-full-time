@@ -63,11 +63,28 @@ function displayContactDetails(addressBookToDisplay) {
   contactsList.html(htmlForContactInfo);
 };//best practice to exclude this from the code that has our event listener.
 
+function showContact(contactID) {
+  var contact = addressBook.findContact(contactId);
+  $("#show-contact").show();
+  $(".first-name").html(contact.firstName);
+  $(".last-name").html(contact.lastName);
+  $(".phoneNumber").html(contact.phoneNumber);
+  var buttons = $("#buttons");
+  buttons.empty();
+  buttons.append("<button class='deleteButton' id+" + + contact.id + ">Delete</button>");
+}
+
 function attachContactListeners(){
   $("ul#contacts").on("click", "li", function(){
-    console.log("The id of this <li> is" + this.id + ".");
+    showContact(this.id);
   });
-};
+    $("#buttons").on("click", ".deleteButton", function(){
+      addressBook.deleteContact(this.id);
+      $("#show-contact").hide();
+    displayContactDetails(addressBook);
+  });
+  };
+
 
 $(document).ready(function() {
   attachContactListeners();
@@ -76,6 +93,11 @@ $(document).ready(function() {
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
     var inputtedPhoneNumber = $("input#new-phone-number").val();
+
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-phone-number").val("");
+
     var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
     addressBook.addContact(newContact);
     console.log(addressBook.contacts);
