@@ -63,15 +63,15 @@ function displayContactDetails(addressBookToDisplay) {
   contactsList.html(htmlForContactInfo);
 };//best practice to exclude this from the code that has our event listener.
 
-function showContact(contactID) {
+function showContact(contactId) {
   var contact = addressBook.findContact(contactId);
   $("#show-contact").show();
   $(".first-name").html(contact.firstName);
   $(".last-name").html(contact.lastName);
-  $(".phoneNumber").html(contact.phoneNumber);
+  $(".phone-number").html(contact.phoneNumber);
   var buttons = $("#buttons");
   buttons.empty();
-  buttons.append("<button class='deleteButton' id+" + + contact.id + ">Delete</button>");
+  buttons.append("<button class='deleteButton' id=" + + contact.id + ">Delete</button>");
 }
 
 function attachContactListeners(){
