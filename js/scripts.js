@@ -49,3 +49,19 @@ function Contact (firstName, lastName, phoneNumber) {
 Contact.prototype.fullName = function () {
   return this.firstName + " " + this.lastName;
 }
+
+
+//user interface logic
+var addressBook = new AddressBook ();//this is unusual--it's a global variable. Normally, we'd avoid. But this exercise needs to mimic a database.
+
+$(document).ready(function (){
+  $("form#new-contact").submit(function(event){
+    event.preventDefault();
+    var inputtedFirstName = $("input#new-first-name").val();
+    var inputtedLastName = $("input#new-last-name").val();
+    var inputtedPhoneNumber = $("input#new-phone-inputtedPhoneNumber").val();
+    var newContact = new Contact (inputtedFirstName, inputted LastName, inputtedPhoneNUmber);
+      addressBook.addContact(newContact);
+      console.log(addressBook.contacts);
+  })
+})
