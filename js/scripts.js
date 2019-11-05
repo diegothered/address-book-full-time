@@ -63,7 +63,14 @@ function displayContactDetails(addressBookToDisplay) {
   contactsList.html(htmlForContactInfo);
 };//best practice to exclude this from the code that has our event listener.
 
+function attachContactListeners(){
+  $("ul#contacts").on("click", "li", function(){
+    console.log("The id of this <li> is" + this.id + ".");
+  });
+};
+
 $(document).ready(function() {
+  attachContactListeners();
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
     var inputtedFirstName = $("input#new-first-name").val();
@@ -71,6 +78,7 @@ $(document).ready(function() {
     var inputtedPhoneNumber = $("input#new-phone-number").val();
     var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
     addressBook.addContact(newContact);
+    console.log(addressBook.contacts);
     displayContactDetails(addressBook);
   })
 })
